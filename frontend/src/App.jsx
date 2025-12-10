@@ -1,10 +1,8 @@
-import TicketsPage from './pages/TicketsPage';
+import AppRouter from './components/AppRouter';
 
 function App() {
   return (
-    <>
-      <TicketsPage />
-    </>
+    <AppRouter />
   )
 }
 

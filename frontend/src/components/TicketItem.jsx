@@ -8,81 +8,105 @@ import {
   carrierText,
   boldText,
   grayText,
-} from "../styled/components/TicketItem/TicketItemStyles";
+} from "../styled/components/TicketItemStyles";
 
-const TicketItem = () => (
-  <Paper sx={ticketPaper}>
-    <Box sx={ticketHeaderBox}>
-      <Typography sx={priceText} variant="h6">
-        12 000
-      </Typography>
-      <Typography sx={carrierText} variant="subtitle1">
-        S7 AirLines
-      </Typography>
-    </Box>
+const TicketItem = ({ ticket }) => {
+  const formatTime = (dateStr, duration) => {
+    const departure = new Date(dateStr);
+    const arrival = new Date(departure.getTime() + duration * 60 * 1000);
+    return `${departure.toLocaleTimeString([], {
+      hour: "2-digit",
+      minute: "2-digit",
+    })} – ${arrival.toLocaleTimeString([], {
+      hour: "2-digit",
+      minute: "2-digit",
+    })}`;
+  };
 
-    <Box>
-      <Box sx={ticketRowBox}>
-        <Box sx={columnBox}>
-          <Box>
-            <Typography variant="body2" sx={grayText}>
-              WAW → HKT
-            </Typography>
-            <Typography variant="body2" sx={boldText}>
-              10:45 – 08:00
-            </Typography>
+  const formatStops = (stops) =>
+    stops.length ? stops.join(", ") : "Без пересадок";
+
+  return (
+    <Paper sx={ticketPaper}>
+      <Box sx={ticketHeaderBox}>
+        <Typography sx={priceText} variant="h6">
+          ${ticket.price}
+        </Typography>
+        <Typography sx={carrierText} variant="subtitle1">
+          {ticket.carrier} AirLines
+        </Typography>
+      </Box>
+
+      <Box>
+        <Box sx={ticketRowBox}>
+          <Box sx={columnBox}>
+            <Box>
+              <Typography variant="body2" sx={grayText}>
+                {ticket.segments[0].origin} → {ticket.segments[0].destination}
+              </Typography>
+              <Typography variant="body2" sx={boldText}>
+                {formatTime(
+                  ticket.segments[0].date,
+                  ticket.segments[0].duration
+                )}
+              </Typography>
+            </Box>
+
+            <Box>
+              <Typography variant="body2" sx={grayText}>
+                {ticket.segments[1].origin} → {ticket.segments[1].destination}
+              </Typography>
+              <Typography variant="body2" sx={boldText}>
+                {formatTime(
+                  ticket.segments[1].date,
+                  ticket.segments[1].duration
+                )}
+              </Typography>
+            </Box>
           </Box>
 
-          <Box>
-            <Typography variant="body2" sx={grayText}>
-              HKT → WAW
-            </Typography>
-            <Typography variant="body2" sx={boldText}>
-              11:20 – 00:50
-            </Typography>
+          <Box sx={columnBox}>
+            <Box>
+              <Typography variant="body2" sx={grayText}>
+                В ПУТИ
+              </Typography>
+              <Typography variant="body2" sx={boldText}>
+                {Math.floor(ticket.segments[0].duration / 60)}ч{" "}
+                {ticket.segments[0].duration % 60}м
+              </Typography>
+            </Box>
+            <Box>
+              <Typography variant="body2" sx={grayText}>
+                В ПУТИ
+              </Typography>
+              <Typography variant="body2" sx={boldText}>
+                {Math.floor(ticket.segments[1].duration / 60)}ч{" "}
+                {ticket.segments[1].duration % 60}м
+              </Typography>
+            </Box>
           </Box>
-        </Box>
 
-        <Box sx={columnBox}>
-          <Box>
-            <Typography variant="body2" sx={grayText}>
-              В ПУТИ
-            </Typography>
-            <Typography variant="body2" sx={boldText}>
-              21ч 15м
-            </Typography>
-          </Box>
-          <Box>
-            <Typography variant="body2" sx={grayText}>
-              В ПУТИ
-            </Typography>
-            <Typography variant="body2" sx={boldText}>
-              13ч 30м
-            </Typography>
-          </Box>
-        </Box>
-
-        <Box sx={columnBox}>
-          <Box>
-            <Typography variant="body2" sx={grayText}>
-              2 ПЕРЕСАДКИ
-            </Typography>
-            <Typography variant="body2" sx={boldText}>
-              HKG, JNB
-            </Typography>
-          </Box>
-          <Box>
-            <Typography variant="body2" sx={grayText}>
-              1 ПЕРЕСАДКА
-            </Typography>
-            <Typography variant="body2" sx={boldText}>
-              HKG
-            </Typography>
+          <Box sx={columnBox}>
+            <Box>
+              <Typography variant="body2" sx={grayText}>
+                ПЕРЕСАДКИ
+              </Typography>
+              <Typography variant="body2" sx={boldText}>
+                {formatStops(ticket.segments[0].stops)}
+              </Typography>
+            </Box>
+            <Box>
+              <Typography variant="body2" sx={grayText}>
+                ПЕРЕСАДКИ
+              </Typography>
+              <Typography variant="body2" sx={boldText}>
+                {formatStops(ticket.segments[1].stops)}
+              </Typography>
+            </Box>
           </Box>
         </Box>
       </Box>
-    </Box>
-  </Paper>
-);
-
+    </Paper>
+  );
+};
 export default TicketItem;

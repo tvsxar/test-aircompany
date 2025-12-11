@@ -1,6 +1,6 @@
 import { ToggleButton, ToggleButtonGroup } from "@mui/material";
 import { useState } from "react";
-import { toggleButtonGroupStyles, toggleButtonStyles } from '../styled/components/TicketsSortButtons/TicketSortButtons'
+import { toggleButtonGroupStyles, toggleButtonStyles } from '../styled/components/TicketSortButtons'
 
 function TicketsSortButtons() {
   const [value, setValue] = useState("cheapest");

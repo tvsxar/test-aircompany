@@ -1,4 +1,4 @@
-import { media } from "../../globals";
+import { media } from "../globals";
 
 export const containerStyles = {
   mt: 4,
@@ -19,4 +19,18 @@ export const rightBoxStyles = {
   flexDirection: "column",
   gap: 2,
   flex: 1,
+};
+
+export const loadingBoxStyles = {
+  minHeight: "100vh",
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+  bgcolor: "#f5fdff",
+  px: 2,
+};
+
+export const loadingTextStyles = {
+  fontWeight: 600,
+  color: "grey.600",
 };

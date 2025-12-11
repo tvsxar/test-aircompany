@@ -11,7 +11,7 @@ import {
   formGroup,
   formControlLabel,
   checkbox,
-} from "../styled/components/TicketsFilter/TicketsFilterStyles";
+} from "../styled/components/TicketsFilterStyles";
 
 const TicketsFilter = () => (
   <Paper sx={ticketFilterPaper}>

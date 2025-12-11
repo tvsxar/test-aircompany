@@ -2,15 +2,15 @@ import {
   AirlinePaperStyle,
   AirLineGrayText,
   AirlineInfoText,
-} from "../styled/components/AirlineInfo/AirlineInfoStyles";
-import { Box, Paper, Typography } from "@mui/material";
+} from "../styled/components/AirlineInfoStyles";
+import { Paper, Typography } from "@mui/material";
 
-const AirlineInfo = () => (
+const AirlineInfo = ({ ticket }) => (
   <Paper sx={AirlinePaperStyle}>
     <Typography variant="h6" sx={AirlineInfoText}>
       Об авиакомпании
     </Typography>
-    <Typography sx={AirLineGrayText}>U7 Airlines</Typography>
+    <Typography sx={AirLineGrayText}>{ticket.carrier} Airlines</Typography>
   </Paper>
 );
 

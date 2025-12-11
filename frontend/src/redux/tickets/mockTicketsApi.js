@@ -2,7 +2,7 @@ const ticketsMockStore = {};
 
 export const fetchSearchId = async () => {
   return new Promise((resolve) => {
-    setTimeout(() => resolve(`search_${Date.now()}`), 200);
+    setTimeout(() => resolve(`hg6${Date.now()}`), 200);
   });
 };
 
@@ -26,6 +26,7 @@ export const fetchTickets = async (searchId) => {
       resolve({
         tickets: [
           {
+            id: `${searchId}_${store.callCount}_${Math.floor(Math.random() * 10000)}`,
             price: Math.floor(Math.random() * 100) * 10,
             carrier: ["SU", "AF", "BA", "LH"][Math.floor(Math.random() * 4)],
             segments: [

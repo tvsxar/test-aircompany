@@ -2,28 +2,16 @@ import { Box } from "@mui/material";
 import TicketItem from "./TicketItem";
 import { Link } from "react-router-dom";
 
-function TicketsList() {
+function TicketsList({ tickets }) {
   return (
     <Box>
-      <Link to='/ticket'>
-        <TicketItem />
-      </Link>
-
-      <Link to='/ticket'>
-        <TicketItem />
-      </Link>
-
-      <Link to='/ticket'>
-        <TicketItem />
-      </Link>
-
-      <Link to='/ticket'>
-        <TicketItem />
-      </Link>
-
-      <Link to='/ticket'>
-        <TicketItem />
-      </Link>
+      {tickets.map((ticket, index) => (
+        <Link 
+        to={"/ticket/" + ticket.id}
+        key={ticket.price + index}>
+          <TicketItem ticket={ticket} />
+        </Link>
+      ))}
     </Box>
   );
 }

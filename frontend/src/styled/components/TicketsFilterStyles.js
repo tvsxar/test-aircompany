@@ -1,4 +1,4 @@
-import { colors, media } from "../../globals";
+import { colors, media } from "../globals";
 
 export const ticketFilterPaper = {
   p: 2,

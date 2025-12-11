@@ -4,17 +4,17 @@ import {
   titlePrice,
   airlineName,
   ButtonStyle,
-} from "../styled/components/TicketInfoHeader/TicketInfoHeaderStyles";
+} from "../styled/components/TicketInfoHeaderStyles";
 import { Box, Paper, Typography, Button } from "@mui/material";
 
-const TicketInfoHeader = () => (
+const TicketInfoHeader = ({ ticket }) => (
   <Paper sx={PaperStyles}>
     <Box sx={boxSpaceBetween}>
       <Typography variant="h4" sx={titlePrice}>
-        12 000
+        ${ticket.price}
       </Typography>
       <Typography variant="h6" sx={airlineName}>
-        S7 Airlines
+        {ticket.carrier} Airlines
       </Typography>
     </Box>
     <Button variant="contained" sx={ButtonStyle}>

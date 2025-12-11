@@ -7,7 +7,7 @@ function AppRouter() {
     <Routes>
       <Route path='/' element={<TicketsPage />} />
       
-      <Route path='/ticket/' element={<TicketInfoPage />} />
+      <Route path='/ticket/:id' element={<TicketInfoPage />} />
     </Routes>
   )
 }

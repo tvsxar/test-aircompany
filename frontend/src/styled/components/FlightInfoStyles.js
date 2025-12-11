@@ -1,4 +1,4 @@
-import { media, colors } from "../../globals";
+import { media, colors } from "../globals";
 
 export const FlightPaperStyle = {
   p: 3,
@@ -72,13 +72,27 @@ export const ChipWrapper = {
   mb: 2,
   [media.xs]: {
     gap: 0.5,
-    flexDirection: 'column'
+    flexDirection: "column",
   },
   [media.sm]: {
     gap: 0.75,
-    flexDirection: 'row'
+    flexDirection: "row",
   },
   [media.md]: {
     gap: 1,
   },
+};
+
+export const loadingBoxStyles = {
+  minHeight: "100vh",
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+  bgcolor: "#f5fdff",
+  px: 2,
+};
+
+export const loadingTextStyles = {
+  fontWeight: 600,
+  color: "grey.600",
 };

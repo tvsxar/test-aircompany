@@ -1,4 +1,4 @@
-import { media } from "../../globals";
+import { media } from "../globals";
 
 export const ContainerStyle = {
   maxWidth: 800,

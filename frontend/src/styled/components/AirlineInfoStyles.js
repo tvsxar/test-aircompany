@@ -1,4 +1,4 @@
-import { media, colors } from "../../globals";
+import { media, colors } from "../globals";
 
 export const AirlinePaperStyle = {
   p: 3,

@@ -1,19 +1,18 @@
-import { TicketsList, TicketsFilter, TicketsSortButtons } from '../components'
+import { TicketsList, TicketsFilter, TicketsSortButtons } from "../components";
 import { Container, Box } from "@mui/material";
-import { containerStyles, leftBoxStyles, rightBoxStyles } from '../styled/pages/TicketsPage/TicketsPageStyles';
+import {
+  containerStyles,
+  leftBoxStyles,
+  rightBoxStyles,
+} from "../styled/pages/TicketsPage/TicketsPageStyles";
 
 function TicketsPage() {
-  // there will be logic
   return (
     <Container maxWidth="md" sx={containerStyles}>
-      <Box
-        sx={leftBoxStyles}
-      >
+      <Box sx={leftBoxStyles}>
         <TicketsFilter />
 
-        <Box
-          sx={rightBoxStyles}
-        >
+        <Box sx={rightBoxStyles}>
           <TicketsSortButtons />
           <TicketsList />
         </Box>

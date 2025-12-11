@@ -1,6 +1,6 @@
 import { call, put, takeLatest } from "redux-saga/effects";
 import { setTickets, setLoading, setError } from "./ticketsSlice";
-import { fetchSearchId, fetchTickets } from "../../api/ticketsApi";
+import { fetchSearchId, fetchTickets } from "./mockTicketsApi";
 
 function* fetchTicketsWorker(action) {
   try {

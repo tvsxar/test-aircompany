@@ -3,7 +3,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import { TicketInfoHeader, FlightInfo, AirlineInfo } from "../components";
 import {
   ContainerStyle,
-  BackButtonStyle
+  BackButtonStyle,
 } from "../styled/pages/TicketInfoPageStyles";
 import { useSelector } from "react-redux";
 import { useState, useEffect } from "react";

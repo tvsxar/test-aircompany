@@ -10,8 +10,25 @@ import {
   grayText,
 } from "../styled/components/TicketItemStyles";
 
-const TicketItem = ({ ticket }) => {
-  const formatTime = (dateStr, duration) => {
+interface Ticket {
+  id: string,
+  carrier: string,
+  price: number,
+  segments: {
+    date: string,
+    destination: string,
+    duration: number,
+    origin: string,
+    stops: string[]
+  }[]
+}
+
+interface TicketItemProps {
+  ticket: Ticket
+}
+
+const TicketItem = ({ ticket }: TicketItemProps) => {
+  const formatTime = (dateStr: string, duration: number) => {
     const departure = new Date(dateStr);
     const arrival = new Date(departure.getTime() + duration * 60 * 1000);
     return `${departure.toLocaleTimeString([], {
@@ -23,7 +40,7 @@ const TicketItem = ({ ticket }) => {
     })}`;
   };
 
-  const formatStops = (stops) =>
+  const formatStops = (stops: string[]) =>
     stops.length ? stops.join(", ") : "Без пересадок";
 
   return (

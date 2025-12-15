@@ -7,7 +7,24 @@ import {
 } from "../styled/components/TicketInfoHeaderStyles";
 import { Box, Paper, Typography, Button } from "@mui/material";
 
-const TicketInfoHeader = ({ ticket }) => (
+interface Ticket {
+  id: string,
+  carrier: string,
+  price: number,
+  segments: {
+    date: string,
+    destination: string,
+    duration: number,
+    origin: string,
+    stops: string[]
+  }[]
+}
+
+interface TicketInfoHeaderProps {
+  ticket: Ticket
+}
+
+const TicketInfoHeader = ({ ticket }: TicketInfoHeaderProps) => (
   <Paper sx={PaperStyles}>
     <Box sx={boxSpaceBetween}>
       <Typography variant="h4" sx={titlePrice}>

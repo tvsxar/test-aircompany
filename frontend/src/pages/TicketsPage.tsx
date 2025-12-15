@@ -1,4 +1,4 @@
-import { TicketsList, TicketsFilter, TicketsSortButtons } from "../components";
+import { TicketsList, TicketsFilter, TicketsSortButtons } from "../components/index";
 import { Container, Box, Typography } from "@mui/material";
 import {
   containerStyles,
@@ -9,14 +9,35 @@ import {
 } from "../styled/pages/TicketsPageStyles";
 import { useSelector, useDispatch } from "react-redux";
 import { useEffect, useState } from "react";
+import { RootState, AppDispatch } from '../redux/store';
+
+interface Ticket {
+  id: string,
+  carrier: string,
+  price: number,
+  segments: {
+    date: string,
+    destination: string,
+    duration: number,
+    origin: string,
+    stops: string[]
+  }[]
+}
+
+interface Filters {
+  stops: number[],
+  sort: "cheapest" | "fastest"
+}
 
 function TicketsPage() {
-  const dispatch = useDispatch();
-  const { tickets, loading } = useSelector((state) => state.tickets);
-  const [displayedTickets, setDisplayedTickets] = useState([]);
-  const [filters, setFilters] = useState({
+  const dispatch = useDispatch<AppDispatch>();
+  const { tickets, loading } = useSelector<RootState, { tickets: Ticket[]; loading: boolean }>(
+    (state) => state.tickets
+  );
+  const [displayedTickets, setDisplayedTickets] = useState<Ticket[]>([]);
+  const [filters, setFilters] = useState<Filters>({
     stops: [],
-    sort: "cheapest",
+    sort: "cheapest"
   });
 
   useEffect(() => {
@@ -30,20 +51,20 @@ function TicketsPage() {
       filters.sort === "cheapest"
         ? [...tickets].sort((a, b) => a.price - b.price)
         : [...tickets].sort(
-            (a, b) =>
-              a.segments[0].duration +
-              a.segments[1].duration -
-              (b.segments[0].duration + b.segments[1].duration)
-          );
+          (a, b) =>
+            a.segments[0].duration +
+            a.segments[1].duration -
+            (b.segments[0].duration + b.segments[1].duration)
+        );
 
     const filteredTickets = sortedTickets.filter((ticket) =>
       !filters.stops.length
         ? true
         : filters.stops.some(
-            (stop) =>
-              ticket.segments[0].stops.length === stop &&
-              ticket.segments[1].stops.length === stop
-          )
+          (stop) =>
+            ticket.segments[0].stops.length === stop &&
+            ticket.segments[1].stops.length === stop
+        )
     );
 
     setDisplayedTickets(filteredTickets);

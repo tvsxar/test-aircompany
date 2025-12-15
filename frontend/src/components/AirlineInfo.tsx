@@ -5,7 +5,24 @@ import {
 } from "../styled/components/AirlineInfoStyles";
 import { Paper, Typography } from "@mui/material";
 
-const AirlineInfo = ({ ticket }) => (
+interface Ticket {
+  id: string,
+  carrier: string,
+  price: number,
+  segments: {
+    date: string,
+    destination: string,
+    duration: number,
+    origin: string,
+    stops: string[]
+  }[]
+}
+
+interface AirlineInfoProps {
+  ticket: Ticket
+}
+
+const AirlineInfo = ({ ticket }: AirlineInfoProps) => (
   <Paper sx={AirlinePaperStyle}>
     <Typography variant="h6" sx={AirlineInfoText}>
       Об авиакомпании

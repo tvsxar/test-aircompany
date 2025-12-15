@@ -16,7 +16,6 @@ export const toggleButtonStyles = {
   height: "3rem",
   border: "none",
   bgcolor: "white",
-  color: "black",
   borderRadius: 0,
   color: colors.darkGray,
   "&.Mui-selected": {

@@ -13,8 +13,25 @@ import {
 } from "../styled/components/FlightInfoStyles";
 import { Box, Paper, Typography, Divider, Chip } from "@mui/material";
 
-const FlightInfo = ({ ticket }) => {
-  const formatTime = (dateStr, duration) => {
+interface Ticket {
+  id: string,
+  carrier: string,
+  price: number,
+  segments: {
+    date: string,
+    destination: string,
+    duration: number,
+    origin: string,
+    stops: string[]
+  }[]
+}
+
+interface FlightInfoProps {
+  ticket: Ticket
+}
+
+const FlightInfo = ({ ticket }: FlightInfoProps) => {
+  const formatTime = (dateStr: string, duration: number) => {
     const departure = new Date(dateStr);
     const arrival = new Date(departure.getTime() + duration * 60 * 1000);
     return `${departure.toLocaleTimeString([], {

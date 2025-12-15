@@ -2,6 +2,19 @@ import { createSlice } from "@reduxjs/toolkit";
 import { call, put, takeLatest } from "redux-saga/effects";
 import { fetchSearchId, fetchTickets } from "../../api/ticketsApi";
 
+interface Ticket {
+  id: string;
+  carrier: string;
+  price: number;
+  segments: {
+    date: string;
+    destination: string;
+    duration: number;
+    origin: string;
+    stops: string[];
+  }[];
+}
+
 const initialState = {
   tickets: [],
   loading: false,
@@ -25,12 +38,12 @@ const ticketsSlice = createSlice({
 });
 
 // Saga
-function* fetchTicketsWorker(action) {
+function* fetchTicketsWorker(): Generator {
   try {
     yield put(setLoading(true));
     const searchId = yield call(fetchSearchId);
 
-    let allTickets = [];
+    let allTickets: Ticket[] = [];
     let done = false;
 
     while (!done) {
@@ -46,7 +59,11 @@ function* fetchTicketsWorker(action) {
 
     yield put(setTickets(allTickets));
   } catch (error) {
-    yield put(setError(error.message));
+    if (error instanceof Error) {
+      yield put(setError(error.message));
+    } else {
+      yield put(setError("Unknown error"));
+    }
   } finally {
     yield put(setLoading(false));
   }

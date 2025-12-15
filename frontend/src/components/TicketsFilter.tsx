@@ -9,13 +9,23 @@ const stopsOptions = [
   { label: "3 пересадки", value: 3 },
 ];
 
-const TicketsFilter = ({ filters, setFilters }) => (
+type Filters = {
+  stops: number[],
+  sort: "cheapest" | "fastest"
+}
+
+interface TicketsFilterProps {
+  filters: Filters,
+  setFilters: (filters: Filters) => void
+}
+
+const TicketsFilter = ({ filters, setFilters }: TicketsFilterProps) => (
   <Paper sx={ticketFilterPaper}>
     <Typography variant="h6" sx={titleText}>
       Количество пересадок
     </Typography>
 
-    <Formik
+    <Formik<{ stops: number[] }>
       enableReinitialize
       initialValues={{ stops: filters.stops }}
       onSubmit={() => {}}
@@ -39,7 +49,7 @@ const TicketsFilter = ({ filters, setFilters }) => (
                         if (e.target.checked) {
                           newStops = [...values.stops, stop.value];
                         } else {
-                          newStops = values.stops.filter((s) => s !== stop.value);
+                          newStops = values.stops.filter((s: number) => s !== stop.value);
                         }
                         setFieldValue("stops", newStops);
                         setFilters({ ...filters, stops: newStops });

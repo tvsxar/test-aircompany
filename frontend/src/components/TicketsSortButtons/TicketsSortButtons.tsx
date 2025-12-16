@@ -2,15 +2,15 @@ import { ToggleButton, ToggleButtonGroup } from "@mui/material";
 import {
   toggleButtonGroupStyles,
   toggleButtonStyles,
-} from "../styled/components/TicketSortButtons";
-import { Filters } from '../types/types';
+} from "../../styled/components/TicketSortButtons";
+import { Filters } from '../../types/types';
 
-interface TicketsFilterProps {
+interface TicketsSortButtonsProps {
   filters: Filters,
   setFilters: (filters: Filters) => void
 }
 
-function TicketsSortButtons({ filters, setFilters }: TicketsFilterProps) {
+function TicketsSortButtons({ filters, setFilters }: TicketsSortButtonsProps) {
   const handleChange = (e: React.MouseEvent<HTMLElement>, newValue: "cheapest" | "fastest" | null) => {
     if (newValue !== null) setFilters({ ...filters, sort: newValue });
   };

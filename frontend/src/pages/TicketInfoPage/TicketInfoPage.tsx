@@ -1,14 +1,14 @@
 import { Box, Button, Typography } from "@mui/material";
 import { useNavigate, useParams } from "react-router-dom";
-import { TicketInfoHeader, FlightInfo, AirlineInfo } from "../components";
+import { TicketInfoHeader, FlightInfo, AirlineInfo } from "../../components";
 import {
   ContainerStyle,
   BackButtonStyle,
-} from "../styled/pages/TicketInfoPageStyles";
+} from "../../styled/pages/TicketInfoPageStyles";
 import { useSelector } from "react-redux";
 import { useState, useEffect } from "react";
-import { RootState } from "../redux/store";
-import { Ticket } from '../types/types';
+import { RootState } from "../../redux/store";
+import { Ticket } from '../../types/types';
 
 function TicketInfoPage() {
   const [selectedTicket, setSelectedTicket] = useState<Ticket | null>(null);

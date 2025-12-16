@@ -1,5 +1,5 @@
-import TicketInfoPage from '../pages/TicketInfoPage';
-import TicketsPage from '../pages/TicketsPage';
+import TicketInfoPage from '../pages/TicketInfoPage/TicketInfoPage';
+import TicketsPage from '../pages/TicketsPage/TicketsPage';
 import { Routes, Route } from 'react-router-dom';
 
 function AppRouter() {

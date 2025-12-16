@@ -10,26 +10,16 @@ import {
   FlightColumnRight,
   loadingBoxStyles,
   loadingTextStyles,
-} from "../styled/components/FlightInfoStyles";
+} from "../../styled/components/FlightInfoStyles";
 import { Box, Paper, Typography, Divider, Chip } from "@mui/material";
-import { Ticket } from '../types/types';
+import { Ticket } from '../../types/types';
+import formatTime from '../../utils/formatTime';
 
 interface FlightInfoProps {
   ticket: Ticket
 }
 
 const FlightInfo = ({ ticket }: FlightInfoProps) => {
-  const formatTime = (dateStr: string, duration: number) => {
-    const departure = new Date(dateStr);
-    const arrival = new Date(departure.getTime() + duration * 60 * 1000);
-    return `${departure.toLocaleTimeString([], {
-      hour: "2-digit",
-      minute: "2-digit",
-    })} – ${arrival.toLocaleTimeString([], {
-      hour: "2-digit",
-      minute: "2-digit",
-    })}`;
-  };
 
   if (!ticket || !ticket.segments || ticket.segments.length < 2) {
     return (

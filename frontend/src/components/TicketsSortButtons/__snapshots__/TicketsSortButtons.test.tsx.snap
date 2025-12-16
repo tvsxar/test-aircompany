@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`TicketsSortButtons component matches snapshot 1`] = `
+<DocumentFragment>
+  <div
+    aria-label="Sort tickets"
+    class="MuiToggleButtonGroup-root MuiToggleButtonGroup-horizontal MuiToggleButtonGroup-fullWidth css-1sun33q-MuiToggleButtonGroup-root"
+    role="group"
+  >
+    <button
+      aria-pressed="true"
+      class="MuiButtonBase-root MuiToggleButtonGroup-grouped MuiToggleButtonGroup-groupedHorizontal MuiToggleButton-root Mui-selected MuiToggleButton-fullWidth MuiToggleButton-sizeMedium MuiToggleButton-standard MuiToggleButtonGroup-grouped MuiToggleButtonGroup-groupedHorizontal MuiToggleButtonGroup-firstButton css-ei9d4j-MuiButtonBase-root-MuiToggleButton-root"
+      tabindex="0"
+      type="button"
+      value="cheapest"
+    >
+      Самый дешёвый
+    </button>
+    <button
+      aria-pressed="false"
+      class="MuiButtonBase-root MuiToggleButtonGroup-grouped MuiToggleButtonGroup-groupedHorizontal MuiToggleButton-root MuiToggleButton-fullWidth MuiToggleButton-sizeMedium MuiToggleButton-standard MuiToggleButtonGroup-grouped MuiToggleButtonGroup-groupedHorizontal MuiToggleButtonGroup-lastButton css-ei9d4j-MuiButtonBase-root-MuiToggleButton-root"
+      tabindex="0"
+      type="button"
+      value="fastest"
+    >
+      Самый быстрый
+    </button>
+  </div>
+</DocumentFragment>
+`;

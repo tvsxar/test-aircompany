@@ -26,7 +26,7 @@ const ticketsSlice = createSlice({
 });
 
 // Saga
-function* fetchTicketsWorker(): Generator {
+export function* fetchTicketsWorker(): Generator {
   try {
     yield put(setLoading(true));
     const searchId = yield call(fetchSearchId);

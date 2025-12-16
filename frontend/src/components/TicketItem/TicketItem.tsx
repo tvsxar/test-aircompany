@@ -8,26 +8,15 @@ import {
   carrierText,
   boldText,
   grayText,
-} from "../styled/components/TicketItemStyles";
-import { Ticket } from '../types/types';
+} from "../../styled/components/TicketItemStyles";
+import { Ticket } from '../../types/types';
+import formatTime from '../../utils/formatTime';
 
 interface TicketItemProps {
   ticket: Ticket
 }
 
 const TicketItem = ({ ticket }: TicketItemProps) => {
-  const formatTime = (dateStr: string, duration: number) => {
-    const departure = new Date(dateStr);
-    const arrival = new Date(departure.getTime() + duration * 60 * 1000);
-    return `${departure.toLocaleTimeString([], {
-      hour: "2-digit",
-      minute: "2-digit",
-    })} – ${arrival.toLocaleTimeString([], {
-      hour: "2-digit",
-      minute: "2-digit",
-    })}`;
-  };
-
   const formatStops = (stops: string[]) =>
     stops.length ? stops.join(", ") : "Без пересадок";
 
@@ -38,7 +27,7 @@ const TicketItem = ({ ticket }: TicketItemProps) => {
           ${ticket.price}
         </Typography>
         <Typography sx={carrierText} variant="subtitle1">
-          {ticket.carrier} AirLines
+          {ticket.carrier} Airlines
         </Typography>
       </Box>
 
@@ -114,4 +103,5 @@ const TicketItem = ({ ticket }: TicketItemProps) => {
     </Paper>
   );
 };
+
 export default TicketItem;

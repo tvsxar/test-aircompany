@@ -1,4 +1,4 @@
-import { TicketsList, TicketsFilter, TicketsSortButtons } from "../components/index";
+import { TicketsList, TicketsFilter, TicketsSortButtons } from "../../components";
 import { Container, Box, Typography } from "@mui/material";
 import {
   containerStyles,
@@ -6,11 +6,11 @@ import {
   rightBoxStyles,
   loadingBoxStyles,
   loadingTextStyles,
-} from "../styled/pages/TicketsPageStyles";
+} from "../../styled/pages/TicketsPageStyles";
 import { useSelector, useDispatch } from "react-redux";
 import { useEffect, useState } from "react";
-import { RootState, AppDispatch } from '../redux/store';
-import { Ticket, Filters } from '../types/types';
+import { RootState, AppDispatch } from '../../redux/store';
+import { Ticket, Filters } from '../../types/types';
 
 function TicketsPage() {
   const dispatch = useDispatch<AppDispatch>();

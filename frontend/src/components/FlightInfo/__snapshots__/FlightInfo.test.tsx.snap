@@ -1,0 +1,115 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`FlightInfo component matches snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 css-1qg4fmi-MuiPaper-root"
+    style="--Paper-shadow: 0px 2px 1px -1px rgba(0,0,0,0.2),0px 1px 1px 0px rgba(0,0,0,0.14),0px 1px 3px 0px rgba(0,0,0,0.12);"
+  >
+    <div
+      class="MuiBox-root css-1yjvs5a"
+    >
+      <h6
+        class="MuiTypography-root MuiTypography-h6 css-1xikaag-MuiTypography-root"
+      >
+        Вылет
+      </h6>
+      <div
+        class="MuiBox-root css-3mllz6"
+      >
+        <div
+          class="MuiBox-root css-j7qwjs"
+        >
+          <p
+            class="MuiTypography-root MuiTypography-body1 css-1rebd30-MuiTypography-root"
+          >
+            WAW → NYC
+          </p>
+          <p
+            class="MuiTypography-root MuiTypography-body1 css-1qp6sni-MuiTypography-root"
+          >
+            12:00 PM – 01:40 PM
+          </p>
+        </div>
+        <div
+          class="MuiBox-root css-1krjymi"
+        >
+          <p
+            class="MuiTypography-root MuiTypography-body1 css-1rebd30-MuiTypography-root"
+          >
+            Время в пути
+          </p>
+          <p
+            class="MuiTypography-root MuiTypography-body1 css-1qp6sni-MuiTypography-root"
+          >
+            1ч 40м
+          </p>
+        </div>
+      </div>
+      <div
+        class="MuiBox-root css-2usgiy"
+      >
+        <div
+          class="MuiChip-root MuiChip-filled MuiChip-sizeMedium MuiChip-colorDefault MuiChip-filledDefault css-1mfsd6e-MuiChip-root"
+        >
+          <span
+            class="MuiChip-label MuiChip-labelMedium css-1dybbl5-MuiChip-label"
+          >
+            Пересадка: HEL
+          </span>
+        </div>
+      </div>
+      <hr
+        class="MuiDivider-root MuiDivider-fullWidth css-1jpc804-MuiDivider-root"
+      />
+    </div>
+    <div
+      class="MuiBox-root css-1yjvs5a"
+    >
+      <h6
+        class="MuiTypography-root MuiTypography-h6 css-1xikaag-MuiTypography-root"
+      >
+        Возврат
+      </h6>
+      <div
+        class="MuiBox-root css-3mllz6"
+      >
+        <div
+          class="MuiBox-root css-j7qwjs"
+        >
+          <p
+            class="MuiTypography-root MuiTypography-body1 css-1rebd30-MuiTypography-root"
+          >
+            NYC → WAW
+          </p>
+          <p
+            class="MuiTypography-root MuiTypography-body1 css-1qp6sni-MuiTypography-root"
+          >
+            08:00 PM – 11:40 PM
+          </p>
+        </div>
+        <div
+          class="MuiBox-root css-1krjymi"
+        >
+          <p
+            class="MuiTypography-root MuiTypography-body1 css-1rebd30-MuiTypography-root"
+          >
+            Время в пути
+          </p>
+          <p
+            class="MuiTypography-root MuiTypography-body1 css-1qp6sni-MuiTypography-root"
+          >
+            3ч 40м
+          </p>
+        </div>
+      </div>
+      <div
+        class="MuiBox-root css-2usgiy"
+      />
+      <hr
+        class="MuiDivider-root MuiDivider-fullWidth css-1jpc804-MuiDivider-root"
+      />
+    </div>
+  </div>
+</DocumentFragment>
+`;

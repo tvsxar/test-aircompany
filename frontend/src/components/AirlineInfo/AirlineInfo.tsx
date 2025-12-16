@@ -2,9 +2,9 @@ import {
   AirlinePaperStyle,
   AirLineGrayText,
   AirlineInfoText,
-} from "../styled/components/AirlineInfoStyles";
+} from "../../styled/components/AirlineInfoStyles";
 import { Paper, Typography } from "@mui/material";
-import { Ticket } from '../types/types';
+import { Ticket } from '../../types/types';
 
 interface AirlineInfoProps {
   ticket: Ticket

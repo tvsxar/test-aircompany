@@ -1,7 +1,7 @@
 import { Paper, Typography, FormGroup, FormControlLabel, Checkbox } from "@mui/material";
-import { ticketFilterPaper, titleText, formGroup, formControlLabel, checkbox } from "../styled/components/TicketsFilterStyles";
+import { ticketFilterPaper, titleText, formGroup, formControlLabel, checkbox } from "../../styled/components/TicketsFilterStyles";
 import { Formik, Form } from "formik";
-import { Filters } from '../types/types';
+import { Filters } from '../../types/types';
 
 const stopsOptions = [
   { label: "Прямой рейс", value: 0 },

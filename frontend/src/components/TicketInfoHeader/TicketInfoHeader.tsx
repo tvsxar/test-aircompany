@@ -4,9 +4,9 @@ import {
   titlePrice,
   airlineName,
   ButtonStyle,
-} from "../styled/components/TicketInfoHeaderStyles";
+} from "../../styled/components/TicketInfoHeaderStyles";
 import { Box, Paper, Typography, Button } from "@mui/material";
-import { Ticket } from '../types/types';
+import { Ticket } from '../../types/types';
 
 interface TicketInfoHeaderProps {
   ticket: Ticket

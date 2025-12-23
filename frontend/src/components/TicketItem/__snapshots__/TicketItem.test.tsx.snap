@@ -1,0 +1,129 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`TicketItem component matches snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 css-1bnfeq1-MuiPaper-root"
+    style="--Paper-shadow: 0px 2px 1px -1px rgba(0,0,0,0.2),0px 1px 1px 0px rgba(0,0,0,0.14),0px 1px 3px 0px rgba(0,0,0,0.12);"
+  >
+    <div
+      class="MuiBox-root css-v08z5u"
+    >
+      <h6
+        class="MuiTypography-root MuiTypography-h6 css-199e0ae-MuiTypography-root"
+      >
+        $100
+      </h6>
+      <h6
+        class="MuiTypography-root MuiTypography-subtitle1 css-zmxroq-MuiTypography-root"
+      >
+        S7 Airlines
+      </h6>
+    </div>
+    <div
+      class="MuiBox-root css-0"
+    >
+      <div
+        class="MuiBox-root css-21y1cj"
+      >
+        <div
+          class="MuiBox-root css-yd8sa2"
+        >
+          <div
+            class="MuiBox-root css-0"
+          >
+            <p
+              class="MuiTypography-root MuiTypography-body2 css-b80kh0-MuiTypography-root"
+            >
+              WAW → NYC
+            </p>
+            <p
+              class="MuiTypography-root MuiTypography-body2 css-vqwtfs-MuiTypography-root"
+            >
+              12:00 PM – 01:40 PM
+            </p>
+          </div>
+          <div
+            class="MuiBox-root css-0"
+          >
+            <p
+              class="MuiTypography-root MuiTypography-body2 css-b80kh0-MuiTypography-root"
+            >
+              NYC → WAW
+            </p>
+            <p
+              class="MuiTypography-root MuiTypography-body2 css-vqwtfs-MuiTypography-root"
+            >
+              08:00 PM – 11:40 PM
+            </p>
+          </div>
+        </div>
+        <div
+          class="MuiBox-root css-yd8sa2"
+        >
+          <div
+            class="MuiBox-root css-0"
+          >
+            <p
+              class="MuiTypography-root MuiTypography-body2 css-b80kh0-MuiTypography-root"
+            >
+              В ПУТИ
+            </p>
+            <p
+              class="MuiTypography-root MuiTypography-body2 css-vqwtfs-MuiTypography-root"
+            >
+              1ч 40м
+            </p>
+          </div>
+          <div
+            class="MuiBox-root css-0"
+          >
+            <p
+              class="MuiTypography-root MuiTypography-body2 css-b80kh0-MuiTypography-root"
+            >
+              В ПУТИ
+            </p>
+            <p
+              class="MuiTypography-root MuiTypography-body2 css-vqwtfs-MuiTypography-root"
+            >
+              3ч 40м
+            </p>
+          </div>
+        </div>
+        <div
+          class="MuiBox-root css-yd8sa2"
+        >
+          <div
+            class="MuiBox-root css-0"
+          >
+            <p
+              class="MuiTypography-root MuiTypography-body2 css-b80kh0-MuiTypography-root"
+            >
+              ПЕРЕСАДКИ
+            </p>
+            <p
+              class="MuiTypography-root MuiTypography-body2 css-vqwtfs-MuiTypography-root"
+            >
+              HEL
+            </p>
+          </div>
+          <div
+            class="MuiBox-root css-0"
+          >
+            <p
+              class="MuiTypography-root MuiTypography-body2 css-b80kh0-MuiTypography-root"
+            >
+              ПЕРЕСАДКИ
+            </p>
+            <p
+              class="MuiTypography-root MuiTypography-body2 css-vqwtfs-MuiTypography-root"
+            >
+              Без пересадок
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
